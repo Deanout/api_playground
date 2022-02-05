@@ -57,9 +57,8 @@ class ChaptersController < ApplicationController
   end
 
   # Create a new book for the chapter.
-  def create_book_for_chapter
+  def create_book_for_chapter(chapter)
     book = Book.create(author: chapter_params[:author])
-    chapter = Chapter.new(chapter_params)
     chapter.book = book
     chapter
   end
