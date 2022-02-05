@@ -1,20 +1,23 @@
 ## Creating a book
 Post request should go to: http://localhost:3000/books
+```json
 { 
     "book": 
     { 
         "author": "John Doe"
     } 
 }
-
+```
 
 ## Expected Response
+```json
 {
     "id": 1,
     "author": "John Doe",
     "created_at": "2022-02-05T04:02:20.774Z",
     "updated_at": "2022-02-05T04:02:20.774Z"
 }
+```
 
 ## Creating A Chapter But A Book With This ID Does Not Exist
 Post request should go to: http://localhost:3000/chapters
