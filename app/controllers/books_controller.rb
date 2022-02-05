@@ -10,7 +10,7 @@ class BooksController < ApplicationController
 
   # GET /books/1
   def show
-    render json: @book
+    render json: @book.to_json(include: :chapters)
   end
 
   # POST /books
@@ -47,8 +47,6 @@ class BooksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def book_params
-    puts '#########################'
-    puts params
-    params.require(:book).permit(:title)
+    params.require(:book).permit(:author)
   end
 end
